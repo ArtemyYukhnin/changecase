@@ -23,6 +23,23 @@ void tcase(std::ifstream& inFile, std::ofstream& outFile) {
 	}
 }
 
+void rcase(std::ifstream& inFile, std::ofstream& outFile) {
+	int ch;
+	unsigned long long x;
+	srand(x);
+	int a = 0;
+	while ((ch = inFile.get()) != EOF) {
+		a = rand();
+		if (ch >= 'a' and ch <= 'z' and a%2==1) {
+			ch = (ch - 'a') + 'A';
+		}
+		else if (ch >= 'A' and ch <= 'Z' and a%2 == 0) {
+			ch = (ch - 'A') + 'a';
+		}
+		outFile.put(ch);
+	}
+}
+
 void gcase(std::ifstream& inFile, std::ofstream& outFile) {
 	int ch;
 	while ((ch = inFile.get()) != EOF) {

@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
+#include <ctime>
 #include "changecase.h"
+#include <cstdlib>
 
 void help() {
 	std::cout << "Use\n\tchangecase -key source_file destination_file\n";
@@ -8,6 +10,7 @@ void help() {
 	std::cout << "\t-U - to upper case\n";
 	std::cout << "\t-G - toggle case\n";
 	std::cout << "\t-T - to title case\n";
+	std::cout << "\t-R - to random case\n";
 }
 
 int main(int argc, char* argv[]) {
@@ -46,6 +49,9 @@ int main(int argc, char* argv[]) {
 	}
 	else if (strcmp(argv[1], "-T") == 0) {
 		tcase(inFile, outFile);
+	}
+	else if (strcmp(argv[1], "-R") == 0) {
+		rcase(inFile, outFile);
 	}
 	else {
 		help();

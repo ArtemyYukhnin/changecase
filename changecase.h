@@ -1,5 +1,7 @@
+#include <iostream>
 #include <fstream>
 #include <cstring>
+#include <ctime>
 
 void help();
 
@@ -11,3 +13,4 @@ void ucase(std::ifstream& inFile, std::ofstream& outFile);
 
 void lcase(std::ifstream& inFile, std::ofstream& outFile);
 
+void rcase(std::ifstream& inFile, std::ofstream& outFile); 
